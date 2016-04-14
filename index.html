@@ -5,8 +5,13 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <title>Angular To-Do App</title>
     </head>
-    <body ng-controller="HomeCtrl as home">
-            {{home.greeting}} {{home.world}}
+    <body>
+      <div ng-controller="HomeCtrl as home">
+        {{home.greeting}} {{home.world}} {{home.user}}
+      </div>
+      <div ng-controller="todoController as todo">
+        {{todo.list}}
+      </div>
     </body>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
