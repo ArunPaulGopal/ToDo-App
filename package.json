@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/ArunPaulGopal/ToDo-App#readme",
   "dependencies": {
-    "express": "^4.13.4",
-    "mocha": "^2.4.5"
+    "express": "^4.13.4"
   }
 }
