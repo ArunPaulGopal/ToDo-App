@@ -10,7 +10,11 @@
         {{home.greeting}} {{home.world}} {{home.user}}
       </div>
       <div ng-controller="todoController as todo">
-        {{todo.list}}
+        <ol class="list-unstyled">
+          <li ng-repeat="item in todo.list">
+            {{item}}
+          </li>
+        </ol>
       </div>
     </body>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
