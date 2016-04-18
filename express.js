@@ -15,12 +15,10 @@ app.get('/user', function(req, res) {
 });
 
 app.get('/read', function(req, res,callback) {
-  console.log("GET ME!!");
   MongoClient.connect(url, function(err, db) {
     if (!err){
       var todos = db.collection('todos');
       todos.find().toArray(function(err,docs){
-        console.log("this find ran");
         var myArray =[];
         for (var i=0; i<docs.length; i++) {
           myArray.push(docs[i].text)
@@ -34,8 +32,6 @@ app.get('/read', function(req, res,callback) {
 });
 
 app.post('/create', jsonParser, function(req, res) {
-  console.log("I have been hit!");
-  console.log(req.body);
   MongoClient.connect(url, function(err, db) {
     if (!err){
       db.collection('todos').insert(
@@ -50,5 +46,21 @@ app.post('/create', jsonParser, function(req, res) {
     }
   })
 });
+
+app.post('/delete', jsonParser,function(req,res){
+  MongoClient.connect(url, function(err, db) {
+    if (!err){
+      db.collection('todos').deleteMany(
+        {
+          text: req.body.content
+        }
+      );
+      db.close();
+      res.send();
+    } else {
+      res.sendStatus(404);
+    }
+  })
+})
 
 app.listen(1337);
