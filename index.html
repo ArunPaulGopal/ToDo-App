@@ -10,9 +10,11 @@
         {{home.greeting}} {{home.world}} {{home.user}}
       </div>
       <div ng-controller="todoController as todo">
+        <input ng-model="todo.item" type="text" placeholder="Add quote here"></input>
+        <input ng-click="todo.add(todo.item)" type="submit"></input>
         Items: <span ng-show="todo.list.length">{{todo.list.length}}
         <ol class="list-unstyled">
-          <li ng-repeat="item in todo.list">
+          <li ng-repeat="item in todo.list track by $index">
             <span ng-class="{'ng-hide': finished}">
               <input ng-click="finished = !finished" type="checkbox"></input>
               {{item}}
