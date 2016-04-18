@@ -28,7 +28,7 @@ app.get('/read', function(req, res,callback) {
         res.send(myArray);
       })
     } else {
-      //ERROR CODE
+      res.sendStatus(404);
     }
   })
 });
@@ -46,20 +46,9 @@ app.post('/create', jsonParser, function(req, res) {
       db.close();
       res.send();
     } else {
-      //ERROR CODE
+      res.sendStatus(404);
     }
   })
 });
-
-app.delete('delete',function(req,res){
-  MongoClient.connect(url,function(err,db){
-    if (!err){
-      db.collection('todos').deleteMany({text:"something"});
-    } else {
-
-    }
-  })
-})
-
 
 app.listen(1337);

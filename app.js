@@ -21,10 +21,10 @@ app.$inject = ['$http'];
 function todo($http) {
   var vm = this;
 
-  function initialLoad() {
+  function activate() {
     getTodos()
   }
-  initialLoad();
+  activate();
 
   function getTodos() {
     var todos = $http.get('http://localhost:1337/read')
@@ -34,13 +34,10 @@ function todo($http) {
     })
   }
 
-
   vm.finished = function(item) {
     var position = vm.list.indexOf(item);
     vm.list.splice(position,1);
   }
-
-
 
   vm.add = function (content){
     var todo = {};
@@ -50,9 +47,4 @@ function todo($http) {
       getTodos()
     })
   }
-
-  vm.delete = function (content){
-
-  }
-
 }
