@@ -51,5 +51,15 @@ app.post('/create', jsonParser, function(req, res) {
   })
 });
 
+app.delete('delete',function(req,res){
+  MongoClient.connect(url,function(err,db){
+    if (!err){
+      db.collection('todos').deleteMany({text:"something"});
+    } else {
+
+    }
+  })
+})
+
 
 app.listen(1337);

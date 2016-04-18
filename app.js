@@ -51,4 +51,8 @@ function todo($http) {
     })
   }
 
+  vm.delete = function (content){
+
+  }
+
 }
