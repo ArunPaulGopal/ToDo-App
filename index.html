@@ -3,24 +3,26 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
         <title>Angular To-Do App</title>
     </head>
     <body>
       <div ng-controller="HomeCtrl as home">
         {{home.greeting}} {{home.world}} {{home.user}}
+        <greeting></greeting>
       </div>
       <div ng-controller="todoController as todo">
-        <input ng-model="todo.item" type="text" placeholder="Add quote here"></input>
-        <input ng-click="todo.add(todo.item)" type="submit"></input>
-        Items: <span ng-show="todo.list.length">{{todo.list.length}}
-        <ol class="list-unstyled">
-          <li ng-repeat="item in todo.list track by $index">
-              <input ng-click="todo.delete(item)" type="checkbox"></input>
-              {{item}}
-          </li>
-        </ol>
+        <add></add>
+        <items></items>
+        <list></list>
       </div>
     </body>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="home/greeting.directive.js"></script>
+    <script type="text/javascript" src="todo/add.directive.js"></script>
+    <script type="text/javascript" src="todo/items.directive.js"></script>
+    <script type="text/javascript" src="todo/list.directive.js"></script>
+    <script type="text/javascript" src="home/home.controller.js"></script>
+    <script type="text/javascript" src="todo/todo.controller.js"></script>
 </html>
