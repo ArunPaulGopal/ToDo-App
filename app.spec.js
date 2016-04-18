@@ -15,3 +15,5 @@ describe('Todos can', function(){
     })
   })
 })
+
+server.close();
