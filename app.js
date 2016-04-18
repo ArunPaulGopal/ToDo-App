@@ -1,4 +1,4 @@
-var app = angular.module('todo',[]);
+var app = angular.module('todo', []);
 
 app.controller("HomeCtrl",home);
 
@@ -14,7 +14,7 @@ function home($http){
   })
 };
 
-app.controller("todoController",todo);
+app.controller("todoController", todo);
 
 app.$inject = ['$http'];
 
@@ -38,10 +38,10 @@ function todo($http) {
     vm.list.splice(position,1);
   }
 
-  vm.add = function (content){
+  vm.add = function(content){
     var todo = {};
     todo.content = content;
-    var added = $http.post('http://localhost:1337/create',todo);
+    var added = $http.post('http://localhost:1337/create', todo);
     added.then(function(){
       getTodos()
     })
@@ -50,7 +50,7 @@ function todo($http) {
   vm.delete = function(item){
     var todelete = {};
     todelete.content = item
-    var deleted = $http.post('http://localhost:1337/delete',todelete);
+    var deleted = $http.post('http://localhost:1337/delete', todelete);
     deleted.then(function(){
       getTodos();
     })

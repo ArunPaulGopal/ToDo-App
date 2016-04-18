@@ -13,11 +13,11 @@ app.get('/user', function(req, res) {
   }
   res.json(user);
 });
-app.get('/read', function(req, res,callback) {
+app.get('/read', function(req, res, callback) {
   MongoClient.connect(url, function(err, db) {
     if (!err){
       var todos = db.collection('todos');
-      todos.find().toArray(function(err,docs){
+      todos.find().toArray(function(err, docs){
         var myArray =[];
         for (var i=0; i<docs.length; i++) {
           myArray.push(docs[i].text)
@@ -44,7 +44,7 @@ app.post('/create', jsonParser, function(req, res) {
     }
   })
 });
-app.post('/delete', jsonParser,function(req,res){
+app.post('/delete', jsonParser, function(req, res){
   MongoClient.connect(url, function(err, db) {
     if (!err){
       db.collection('todos').deleteMany(
