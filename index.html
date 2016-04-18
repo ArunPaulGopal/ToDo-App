@@ -15,10 +15,8 @@
         Items: <span ng-show="todo.list.length">{{todo.list.length}}
         <ol class="list-unstyled">
           <li ng-repeat="item in todo.list track by $index">
-            <span ng-class="{'ng-hide': finished}">
-              <input ng-click="finished = !finished" type="checkbox"></input>
+              <input ng-click="todo.delete(item)" type="checkbox"></input>
               {{item}}
-            </span>
           </li>
         </ol>
       </div>
