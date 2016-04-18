@@ -1,8 +1,7 @@
 var gulp = require('gulp');
 var csso = require('gulp-csso');
-var nodemon =require('gulp-nodemon');
+var nodemon = require('gulp-nodemon');
 var mocha = require('gulp-mocha');
-
 
 gulp.task('default', function(){
     nodemon({

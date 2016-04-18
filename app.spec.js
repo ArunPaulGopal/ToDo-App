@@ -14,10 +14,4 @@ describe('Todos can', function(){
       done();
     })
   })
-  it('be added', function(done){
-    request('http://localhost:' + port + '/create/', function(errors,response){
-      assert.equal(response.statusCode,200);
-      done();
-    })
-  })
 })

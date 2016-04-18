@@ -22,9 +22,11 @@ app.get('/read', function(req, res, callback) {
         for (var i=0; i<docs.length; i++) {
           myArray.push(docs[i].text)
         }
+        db.close();
         res.send(myArray);
       })
     } else {
+      db.close();
       res.sendStatus(404);
     }
   })
@@ -40,6 +42,7 @@ app.post('/create', jsonParser, function(req, res) {
       db.close();
       res.send();
     } else {
+      db.close();
       res.sendStatus(404);
     }
   })
@@ -55,6 +58,7 @@ app.post('/delete', jsonParser, function(req, res) {
       db.close();
       res.send();
     } else {
+      db.close();
       res.sendStatus(404);
     }
   })
