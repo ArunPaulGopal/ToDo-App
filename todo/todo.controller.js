@@ -8,12 +8,12 @@ function todo($http) {
   var vm = this;
 
   function activate() {
-    getTodos()
+    getTodos();
   }
   activate();
 
   function getTodos() {
-    var todos = $http.get('http://localhost:1337/read')
+    var todos = $http.get('http://localhost:1337/read');
     todos.then(function(todo){
       vm.list = todo.data;
     })
@@ -28,16 +28,16 @@ function todo($http) {
     var todo = {};
     todo.content = content;
     var added = $http.post('http://localhost:1337/create', todo);
-    added.then(function(){
-      getTodos()
+    added.then(function() {
+      getTodos();
     })
   }
 
   vm.delete = function(item) {
     var todelete = {};
-    todelete.content = item
+    todelete.content = item;
     var deleted = $http.post('http://localhost:1337/delete', todelete);
-    deleted.then(function(){
+    deleted.then(function() {
       getTodos();
     })
   }
