@@ -44,7 +44,7 @@ app.post('/create', jsonParser, function(req, res) {
     }
   })
 });
-app.post('/delete', jsonParser, function(req, res){
+app.post('/delete', jsonParser, function(req, res) {
   MongoClient.connect(url, function(err, db) {
     if (!err){
       db.collection('todos').deleteMany(
