@@ -11,9 +11,8 @@ describe('Todos can', function(){
   it('be read', function(done){
     request('http://localhost:' + port + '/read/', function(errors,response){
       assert.equal(response.statusCode,200);
+      server.close();
       done();
     })
   })
 })
-
-server.close();
