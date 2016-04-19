@@ -1,2 +1,3 @@
 <input ng-model="todo.item" type="text" placeholder="Add quote here"></input>
-<input ng-click="todo.add(todo.item)" type="submit"></input>
+<input ng-model="todo.date" type="date" placeholder="Add due date here"></input>
+<input ng-click="todo.add(todo.item,todo.date)" type="submit"></input>

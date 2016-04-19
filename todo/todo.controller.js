@@ -24,9 +24,10 @@ function todo($http) {
     vm.list.splice(position,1);
   }
 
-  vm.add = function(content) {
+  vm.add = function(content,date) {
     var todo = {};
     todo.content = content;
+    todo.date = date;
     var added = $http.post('http://localhost:1337/create', todo);
     added.then(function() {
       getTodos();
@@ -35,7 +36,8 @@ function todo($http) {
 
   vm.delete = function(item) {
     var todelete = {};
-    todelete.content = item;
+    todelete.content = item.text;
+    todelete.date = item.date;
     var deleted = $http.post('http://localhost:1337/delete', todelete);
     deleted.then(function() {
       getTodos();
