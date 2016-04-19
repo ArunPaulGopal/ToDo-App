@@ -1,6 +1,16 @@
-<ol class="list-unstyled">
-  <li ng-repeat="item in todo.list track by $index">
-      <input ng-click="todo.delete(item)" type="checkbox"></input>
-      {{item.text}} {{item.date | date : 'short'}}
-  </li>
-</ol>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <ol class="list-group">
+            <li ng-repeat="item in todo.list track by $index" class="list-group-item">
+                <input ng-click="todo.delete(item)" type="checkbox"></input>
+                {{item.text}} {{item.date | date : 'shortDate'}}
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
