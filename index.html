@@ -7,12 +7,7 @@
         <title>Angular To-Do App</title>
     </head>
     <body>
-      <div ng-controller="HomeCtrl as home" class="jumbotron text-center">
-        <h1>{{home.greeting}} {{home.world}} {{home.user}}</h1>
-        <greeting></greeting>
-        <a href="#/todo"><button class="btn btn-primary btn-lg">Show my to-do list</button></a>
-        <a href="#/profile"><button class="btn btn-primary btn-lg">Show my profile</button></a>
-      </div>
+      <greeting></greeting>
       <div ng-view></div>
       <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular-route.js"></script>
