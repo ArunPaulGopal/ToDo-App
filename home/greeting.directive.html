@@ -1,4 +1,5 @@
-<span class="pull-right text-right col-sm2">
-  <i class="fa fa-fw fa-user"></i>
-  {{home.message}} {{home.user}}
-</span>
+<div ng-controller="HomeCtrl as home" class="jumbotron text-center">
+  <h1>{{home.greeting}} {{home.world}} {{home.user}}</h1>
+  <a href="#/todo"><button class="btn btn-primary btn-lg">Show my to-do list</button></a>
+  <a href="#/profile"><button class="btn btn-primary btn-lg">Show my profile</button></a>
+</div>

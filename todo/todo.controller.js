@@ -24,7 +24,7 @@ function todo($http) {
     vm.list.splice(position,1);
   }
 
-  vm.add = function(content,date) {
+  vm.add = function(content, date) {
     var todo = {};
     todo.content = content;
     todo.date = date;
