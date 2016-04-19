@@ -5,7 +5,7 @@
         <div class="panel-body">
           <input ng-model="todo.item" type="text" placeholder="Add quote here"></input>
           <input ng-model="todo.date" type="date" placeholder="Add due date here"></input>
-          <input ng-click="todo.add(todo.item,todo.date)" type="submit"></input>
+          <button ng-click="todo.add(todo.item,todo.date)" type="submit" class="btn btn-primary btn-lg">Add!</button>
         </div>
       </div>
     </div>
