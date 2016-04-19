@@ -1,6 +1,6 @@
 <ol class="list-unstyled">
   <li ng-repeat="item in todo.list track by $index">
       <input ng-click="todo.delete(item)" type="checkbox"></input>
-      {{item}}
+      {{item.text}} {{item.date | date : 'short'}}
   </li>
 </ol>

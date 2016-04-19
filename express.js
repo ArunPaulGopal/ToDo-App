@@ -20,7 +20,7 @@ app.get('/read', function(req, res, callback) {
       todos.find().toArray(function(err, docs){
         var myArray =[];
         for (var i=0; i<docs.length; i++) {
-          myArray.push(docs[i].text)
+          myArray.push(docs[i].data)
         }
         db.close();
         res.send(myArray);
@@ -36,7 +36,10 @@ app.post('/create', jsonParser, function(req, res) {
     if (!err){
       db.collection('todos').insert(
         {
-          text:req.body.content
+          data: {
+            text: req.body.content,
+            date: req.body.date
+          }
         }
       );
       db.close();
@@ -52,7 +55,10 @@ app.post('/delete', jsonParser, function(req, res) {
     if (!err){
       db.collection('todos').deleteMany(
         {
-          text: req.body.content
+          data: {
+            text: req.body.content,
+            date: req.body.date
+          }
         }
       );
       db.close();
