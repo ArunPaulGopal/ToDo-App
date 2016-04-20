@@ -2,7 +2,7 @@ var app = angular.module('todo');
 
 app.controller("todoController", todo);
 
-app.$inject = ['$http'];
+app.$inject = ['$http','userService'];
 
 function todo($http) {
   var vm = this;

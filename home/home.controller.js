@@ -2,14 +2,13 @@ var app = angular.module('todo');
 
 app.controller("HomeCtrl", home);
 
-app.$inject = ['$http'];
+app.$inject = ['$http','userService'];
 
-function home($http) {
+function home($http,userService) {
   var vm = this;
-  vm.greeting = "Hello";
-  vm.world = "World, let's write some todos";
-  var user = $http.get('http://localhost:1337/user');
-  user.then(function(info) {
+  vm.greeting = "Let's write some todos";
+  var factory = userService.getUser();
+  factory.then(function(info) {
     vm.user = info.data.name;
   })
 };
